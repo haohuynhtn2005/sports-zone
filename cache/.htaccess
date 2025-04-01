@@ -1,0 +1,4 @@
+<FilesMatch "!^((.*)\.png|(.*)\.jpg)|(.*)\.jpeg)|(.*)\.gif)|index\.php|index\.html">
+  Order allow,deny
+  Deny from all
+</FilesMatch>

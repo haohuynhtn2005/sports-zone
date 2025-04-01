@@ -1,0 +1,21 @@
+.btnSubmit {
+    background-color: #09f;
+    border: 0;
+    padding: 10px 40px;
+    color: #FFF;
+    border: #F0F0F0 1px solid;
+    border-radius: 4px;
+}
+
+#progress-div {
+    border: #0FA015 1px solid;
+    padding: 5px 0px;
+    margin: 30px 0px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#targetLayer {
+    width: 100%;
+    text-align: center;
+}
