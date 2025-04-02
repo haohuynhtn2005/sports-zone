@@ -6,8 +6,8 @@
     !empty($slideshow_none)
 ): ?>
 
-<?php foreach ($slideshow_none as $key => $value):
-    $data_src = get_media('images', $value['image'], 'no-image.png'); ?>
+<?php foreach ($slideshow_none as $key => $value): ?>
+    <?php $data_src = get_media('images', $value['image'], 'no-image.png'); ?>
     <section id="hero" class="hero section" style="background-image: url(<?= $data_src ?>);">
         <div class="container">
             <div class="row gy-4">
@@ -42,8 +42,7 @@
             </div>
         </div>
     </section>
-<?php
-endforeach; ?>
+<?php endforeach; ?>
 
 <?php endif; ?>
 <!-- /Hero Section -->
@@ -55,20 +54,20 @@ endforeach; ?>
             <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
                     <h2>
-                    <?php echo isset($about_us_none['title'])
+                    <?= isset($about_us_none['title'])
                         ? $about_us_none['title']
-                        : ''; ?>
+                        : '' ?>
                 </h2>
                 <p>
-                    <?php echo isset($about_us_none['content'])
+                    <?= isset($about_us_none['content'])
                         ? $about_us_none['content']
-                        : ''; ?>
+                        : '' ?>
                 </p>
                 <div class="text-center text-lg-start">
                 <a
-                    href="<?php echo isset($about_us_none['link'])
+                    href="<?= isset($about_us_none['link'])
                         ? $about_us_none['link']
-                        : ''; ?>"
+                        : '' ?>"
                     class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
                     <span>Xem chi tiết</span>
                     <i class="bi bi-arrow-right"></i>
@@ -79,16 +78,16 @@ endforeach; ?>
 
             <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
                 <img
-                    src="<?php echo isset($about_us_none['image'])
+                    src="<?= isset($about_us_none['image'])
                         ? get_media(
                             'images',
                             $about_us_none['image'],
-                            'no-image.png'
+                            'no-image.png',
                         )
-                        : ''; ?>"
-                    alt="<?php echo isset($about_us_none['alt'])
+                        : '' ?>"
+                    alt="<?= isset($about_us_none['alt'])
                         ? $about_us_none['alt']
-                        : ''; ?>"
+                        : '' ?>"
                     class="img-fluid" 
                     >
             </div>
@@ -246,7 +245,7 @@ endforeach; ?>
 <!-- /Events Posts Section -->
 
 <!-- Values Section -->
-<?php echo isset($posts_service) ? $posts_service : ''; ?>
+<?= isset($posts_service) ? $posts_service : '' ?>
 <!-- /Values Section -->
 
 <!-- Organize Section -->
@@ -257,132 +256,128 @@ endforeach; ?>
     isset($info_why_choose_us_none) &&
     is_array($info_why_choose_us_none) &&
     !empty($info_why_choose_us_none)
-):
-    $attributes = isset($info_why_choose_us_none['attributes'])
+): ?>
+    <?php $attributes = isset($info_why_choose_us_none['attributes'])
         ? @unserialize($info_why_choose_us_none['attributes'])
         : null; ?>
-        
-<section id="feature-details" class="feature-details section">
-    <div class="container section-title" data-aos="fade-up">
-    <h2>Vì sao nên chọn NKV</h2>
-    <p>Quy trình tổ chức<br></p>
-    </div><!-- End Section Title -->
-    <div class="container">
 
-        <div class="row gy-4 align-items-center features-item">
-            <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <img src="image/kh1.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-            <h3>Lập kế hoạch tổ chức (PLAN)</h3>
+    <section id="feature-details" class="feature-details section">
+        <div class="container section-title" data-aos="fade-up">
+        <h2>Vì sao nên chọn NKV</h2>
+        <p>Quy trình tổ chức<br></p>
+        </div><!-- End Section Title -->
+        <div class="container">
 
-            <ul>
-                <li><span> Xác định rõ mục tiêu của sự kiện: Bạn muốn đạt được điều gì?</span></li>
-                <li> <span>Xác định phạm vi của sự kiện: Đối tượng tham gia là ai.</span></li>
-                <li><span>Lập kế hoạch chi tiết: bao gồm lịch trình, địa điểm, ngân sách</span></li>
-            </ul>
-            </div>
-        </div><!-- Features Item -->
+            <div class="row gy-4 align-items-center features-item">
+                <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+                <img src="image/kh1.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+                <h3>Lập kế hoạch tổ chức (PLAN)</h3>
 
-        <div class="row gy-4 align-items-center features-item">
-            <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="image/kh2.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
-            <h3>Điều phối nhân sự và triển khai vận hành (DO)</h3>
-            <ul>
-                <li><span> Triển khai công việc theo kế hoạch</span></li>
-                <li> <span>Phân bổ nguồn lực hợp lý</span></li>
+                <ul>
+                    <li><span> Xác định rõ mục tiêu của sự kiện: Bạn muốn đạt được điều gì?</span></li>
+                    <li> <span>Xác định phạm vi của sự kiện: Đối tượng tham gia là ai.</span></li>
+                    <li><span>Lập kế hoạch chi tiết: bao gồm lịch trình, địa điểm, ngân sách</span></li>
+                </ul>
+                </div>
+            </div><!-- Features Item -->
 
-            </ul>
-            </div>
-        </div><!-- Features Item -->
+            <div class="row gy-4 align-items-center features-item">
+                <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+                <img src="image/kh2.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+                <h3>Điều phối nhân sự và triển khai vận hành (DO)</h3>
+                <ul>
+                    <li><span> Triển khai công việc theo kế hoạch</span></li>
+                    <li> <span>Phân bổ nguồn lực hợp lý</span></li>
 
-        <div class="row gy-4 align-items-center features-item">
-            <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
-            <img src="image/kh3.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-7" data-aos="fade-up">
-            <h3>Truyền thông sự kiện</h3>
+                </ul>
+                </div>
+            </div><!-- Features Item -->
 
-            <ul>
-                <li><span>Xây dựng và thực hiện chiến lược truyền thông</span></li>
-                <li><span> Xây dựng và thực hiện chiến lược truyền thông</span></li>
+            <div class="row gy-4 align-items-center features-item">
+                <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+                <img src="image/kh3.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7" data-aos="fade-up">
+                <h3>Truyền thông sự kiện</h3>
 
-            </ul>
-            </div>
-        </div><!-- Features Item -->
+                <ul>
+                    <li><span>Xây dựng và thực hiện chiến lược truyền thông</span></li>
+                    <li><span> Xây dựng và thực hiện chiến lược truyền thông</span></li>
 
-        <div class="row gy-4 align-items-center features-item">
-            <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
-            <img src="image/kh4.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
-            <h3>Hậu sự kiện và đánh giá</h3>
+                </ul>
+                </div>
+            </div><!-- Features Item -->
 
-            <ul>
-                <li><span>Hậu sự kiện: Sau khi kết thúc sự kiện, chúng tôi tiếp tục hỗ trợ về các hạng mục bàn
-                    giao.</span></li>
-                <li><span> Hậu sự kiện: Sau khi kết thúc sự kiện, chúng tôi tiếp tục hỗ trợ về các hạng mục bàn
-                    giao.</span></li>
+            <div class="row gy-4 align-items-center features-item">
+                <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
+                <img src="image/kh4.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
+                <h3>Hậu sự kiện và đánh giá</h3>
 
-            </ul>
-            </div>
-        </div><!-- Features Item -->
+                <ul>
+                    <li><span>Hậu sự kiện: Sau khi kết thúc sự kiện, chúng tôi tiếp tục hỗ trợ về các hạng mục bàn
+                        giao.</span></li>
+                    <li><span> Hậu sự kiện: Sau khi kết thúc sự kiện, chúng tôi tiếp tục hỗ trợ về các hạng mục bàn
+                        giao.</span></li>
 
-    </div>
+                </ul>
+                </div>
+            </div><!-- Features Item -->
 
-</section>
+        </div>
 
-<section id="about" class="t-center  container sm-py">
-    <h2 class="gray8 uppercase"><?php
-     echo isset(
-        $info_why_choose_us_none['title']
-    )
-        ? $info_why_choose_us_none['title']
-        : ''; ?></h2>
-    <div class="title-strips-over dark xs-mb"></div>
-    <?php echo isset($info_why_choose_us_none['content'])
-        ? $info_why_choose_us_none['content']
-        : ''; ?>
-    <div class="boxes container t-left xs-py">
-        <div class="row">
-            <?php if (is_array($attributes) && !empty($attributes)):
-                $why_choose_us_icon = $this->config->item(
-                    'why_choose_us_icon'
-                ); ?>
-                <?php foreach ($attributes as $key => $attribute): ?>
-                    <div class="col-md-4 col-12 xs-mt-mobile animated" data-animation="fadeInUp" data-animation-delay="100">
-                        <div class="row no-mx">
-                            <div class="col-2 mini-pt no-pm">
-                                <i class="<?php echo display_value_array(
-                                    $why_choose_us_icon,
-                                    $key % count($why_choose_us_icon)
-                                ); ?>h1 colored2"></i>
-                            </div>
-                            <div class="col-10 no-pm">
-                                <h4 class="bold-subtitle font-19">
-                                    <?php echo $attribute['label']; ?></h4>
-                                <p class="mini-mt gray8 font-15"><?php echo $attribute[
-                                    'content'
-                                ]; ?></p>
+    </section>
+
+    <section id="about" class="t-center  container sm-py">
+        <h2 class="gray8 uppercase"><?= isset($info_why_choose_us_none['title'])
+            ? $info_why_choose_us_none['title']
+            : '' ?></h2>
+        <div class="title-strips-over dark xs-mb"></div>
+        <?= isset($info_why_choose_us_none['content'])
+            ? $info_why_choose_us_none['content']
+            : '' ?>
+        <div class="boxes container t-left xs-py">
+            <div class="row">
+                <?php if (is_array($attributes) && !empty($attributes)):
+                    $why_choose_us_icon = $this->config->item(
+                        'why_choose_us_icon',
+                    ); ?>
+                    <?php foreach ($attributes as $key => $attribute): ?>
+                        <div class="col-md-4 col-12 xs-mt-mobile animated" data-animation="fadeInUp" data-animation-delay="100">
+                            <div class="row no-mx">
+                                <div class="col-2 mini-pt no-pm">
+                                    <i class="<?= display_value_array(
+                                        $why_choose_us_icon,
+                                        $key % count($why_choose_us_icon),
+                                    ) ?>h1 colored2"></i>
+                                </div>
+                                <div class="col-10 no-pm">
+                                    <h4 class="bold-subtitle font-19">
+                                        <?= $attribute['label'] ?></h4>
+                                    <p class="mini-mt gray8 font-15"><?= $attribute[
+                                        'content'
+                                    ] ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php
-            endif; ?>
+                    <?php endforeach; ?>
+                <?php
+                endif; ?>
+            </div>
         </div>
-    </div>
-</section>
-<?php
-endif; ?>
+    </section>
+<?php endif; ?>
 
 <?php $this->load->view('block-slogun'); ?>
 
-<?php echo isset($projects_has_been_constructed)
+<?= isset($projects_has_been_constructed)
     ? $projects_has_been_constructed
-    : ''; ?>
+    : '' ?>
 
 <?php if (
     isset($info_customer_experience_none) &&
@@ -395,79 +390,75 @@ endif; ?>
         <div class="title-strips-over dark xs-mb"></div>
     </div>
     <div class="container white c-grab t-center custom-slider qdr-controls-3 light" data-slick='{"dots": false, "arrows": true, "draggable":true, "slidesToShow": 3, "slidesToScroll": 3}'>
-        <?php foreach ($info_customer_experience_none as $value):
-            $attributes = isset($value['attributes'])
+        <?php foreach ($info_customer_experience_none as $value): ?>
+            <?php $attributes = isset($value['attributes'])
                 ? @unserialize($value['attributes'])
                 : null; ?>
-        <div class="col-md-4 animated" data-animation="fadeInUp" data-animation-delay="100">
-            <div class="m-auto">
-                <i class="fa fa-quote-right fa-4x opacity-9"></i>
+            <div class="col-md-4 animated" data-animation="fadeInUp" data-animation-delay="100">
+                <div class="m-auto">
+                    <i class="fa fa-quote-right fa-4x opacity-9"></i>
+                </div>
+                <h3 class="bold-subtitle no-pm xs-mt"><?= $value[
+                    'title'
+                ] ?></h3>
+                <h5><?= isset($attributes[0]['label'])
+                    ? $attributes[0]['label']
+                    : '' ?></h6>
+                <h6 class="xxs-mt font-14 no-ls t-justify"><?= isset(
+                    $attributes[0]['content'],
+                )
+                    ? $attributes[0]['content']
+                    : '' ?></h6>
             </div>
-            <h3 class="bold-subtitle no-pm xs-mt"><?php echo $value[
-                'title'
-            ]; ?></h3>
-            <h5><?php echo isset($attributes[0]['label'])
-                ? $attributes[0]['label']
-                : ''; ?></h6>
-            <h6 class="xxs-mt font-14 no-ls t-justify"><?php echo isset(
-                $attributes[0]['content']
-            )
-                ? $attributes[0]['content']
-                : ''; ?></h6>
-        </div>
-        <?php
-        endforeach; ?>
+        <?php endforeach; ?>
     </div>
 </section>
 <?php endif; ?>
+
 <?php if (
     isset($info_collaboration_none) &&
     is_array($info_collaboration_none) &&
     !empty($info_collaboration_none)
-):
-    $attributes = isset($info_collaboration_none['attributes'])
+): ?>
+    <?php $attributes = isset($info_collaboration_none['attributes'])
         ? @unserialize($info_collaboration_none['attributes'])
         : null; ?>
-<section id="one" class="sm-py xs-py-mobile">
-    <div class="container t-center">
-        <h2 class="uppercase"><?php echo isset(
-            $info_collaboration_none['title']
-        )
-            ? $info_collaboration_none['title']
-            : ''; ?></h2>
-        <div class="title-strips-over dark mini-mb"></div>
-    </div>
-    <div class="t-left">
-        <div class="container">
-            <div class="row">
-                <?php if (is_array($attributes) && !empty($attributes)): ?>
-                    <?php foreach ($attributes as $key => $attribute): ?>
-                    <div class="col-md-4 col-12 sm-mt mini-mt-mobile qdr-hover-6-container animated" data-animation="fadeInUp" data-animation-delay="100">
-                        <div class="row no-mx">
-                            <div class="col-4 mxw-70 t-center-sm no-pm">
-                                <div class="no-pm icon-lg icon-mobile-lg bg-colored circle font-35 white"><?php echo $key +
-                                    1; ?></div>
-                            </div>
-                            <div class="col-8 no-pr lh-sm">
-                                <h4 class="bold-subtitle font-18 xxs-mt-mobile"><?php echo $attribute[
-                                    'label'
-                                ]; ?></h4>
-                                <p class="lh-md font-14 t-justify"><?php echo $attribute[
-                                    'content'
-                                ]; ?></p>
+    <section id="one" class="sm-py xs-py-mobile">
+        <div class="container t-center">
+            <h2 class="uppercase"><?= isset($info_collaboration_none['title'])
+                ? $info_collaboration_none['title']
+                : '' ?></h2>
+            <div class="title-strips-over dark mini-mb"></div>
+        </div>
+        <div class="t-left">
+            <div class="container">
+                <div class="row">
+                    <?php if (is_array($attributes) && !empty($attributes)): ?>
+                        <?php foreach ($attributes as $key => $attribute): ?>
+                        <div class="col-md-4 col-12 sm-mt mini-mt-mobile qdr-hover-6-container animated" data-animation="fadeInUp" data-animation-delay="100">
+                            <div class="row no-mx">
+                                <div class="col-4 mxw-70 t-center-sm no-pm">
+                                    <div class="no-pm icon-lg icon-mobile-lg bg-colored circle font-35 white"><?= $key +
+                                        1 ?></div>
+                                </div>
+                                <div class="col-8 no-pr lh-sm">
+                                    <h4 class="bold-subtitle font-18 xxs-mt-mobile"><?= $attribute[
+                                        'label'
+                                    ] ?></h4>
+                                    <p class="lh-md font-14 t-justify"><?= $attribute[
+                                        'content'
+                                    ] ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<?php
-endif; ?>
+    </section>
+<?php endif; ?>
 
-<?php echo isset($posts_news) ? $posts_news : ''; ?>
-
+<?= isset($posts_news) ? $posts_news : '' ?>
 
 </main>

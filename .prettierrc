@@ -7,8 +7,7 @@
       "options": {
         "parser": "php",
         "plugins": ["@prettier/plugin-php"],
-        "phpVersion": "5.6",
-        "singleAttributePerLine": true
+        "phpVersion": "8.2"
       }
     }
   ]
