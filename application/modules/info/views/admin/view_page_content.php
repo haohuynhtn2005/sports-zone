@@ -55,7 +55,7 @@
                                             <span class="input-group-btn">
                                                 <button class="btn btn-danger remove-element" type="button"> <i class="fa fa-trash"></i></button>
                                             </span>
-                                            <input type="text" class="form-control" name="<?php echo $attribute; ?>[label][]" value="<?php echo html_escape($value['label']); ?>" placeholder="Tiêu đề">
+                                            <input type="text" class="form-control" name="<?php echo $attribute; ?>[label][]" value="<?php echo $value['label']; ?>" placeholder="Tiêu đề">
                                         </div>
                                     </div>
                                     <div class="col-md-9">

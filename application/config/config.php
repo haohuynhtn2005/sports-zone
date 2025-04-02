@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = (isset($_SERVER['HTTPS']) ? "https://" : "http://") . 'ketnoinhuy.com/';
-$config['base_url'] = "https://localhost/sportzone/";
+$config['base_url'] = "https://localhost/sportszone/";
 
 /*
 |--------------------------------------------------------------------------

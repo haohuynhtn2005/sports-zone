@@ -2,11 +2,11 @@
 
 application/cache/*
 !application/cache/index.html
+!application/cache/.htaccess
 
 application/logs/*
 !application/logs/index.html
-
-!application/*/.htaccess
+!application/logs/.htaccess
 
 composer.lock
 tests/mocks/database/ci_test.sqlite

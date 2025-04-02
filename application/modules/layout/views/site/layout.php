@@ -24,7 +24,7 @@
     <meta name="twitter:description" content="<?php echo html_escape($description); ?>">
     <meta name="twitter:creator" content="@author_handle">
     <meta name="twitter:image:src" content="<?php echo $image; ?>">
-    <title><?php echo $title_seo; ?></title>
+    <title><?php echo $title; ?></title>
     <link rel="icon" href="<?php echo base_url(get_module_path('logo') . $favicon); ?>" type="image/x-icon">
     
     <!-- Fonts -->
@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="<?php echo get_asset('css_path'); ?>main.css" />
 </head>
 
-<body>
+<body class="<?= base_url() == current_url() ? 'index-page' : '' ?>">
     <!-- <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -78,7 +78,7 @@
     <script src="<?php echo base_url('assets/plugins/aos/aos.js'); ?>"></script>
     <script src="<?php echo base_url('assets/plugins/glightbox/js/glightbox.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/plugins/purecounter/purecounter_vanilla.js'); ?>"></script>
-  <script src="<?php echo base_url('assets/plugins/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/plugins/isotope-layout/isotope.pkgd.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/plugins/swiper/swiper-bundle.min.js'); ?>"></script>
     <!-- Main JS File -->
