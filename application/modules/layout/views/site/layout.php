@@ -76,7 +76,9 @@
     <script src="<?php echo base_url('assets/plugins/bootstrap-5.3/js/bootstrap.bundle.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/plugins/php-email-form/validate.js'); ?>"></script>
     <script src="<?php echo base_url('assets/plugins/aos/aos.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/plugins/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/glightbox/js/glightbox.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/purecounter/purecounter_vanilla.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/plugins/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/plugins/isotope-layout/isotope.pkgd.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/plugins/swiper/swiper-bundle.min.js'); ?>"></script>
     <!-- Main JS File -->

@@ -284,16 +284,15 @@ class Layout extends MX_Controller {
                 if (is_array($data_menu_main_1) && !empty($data_menu_main_1)) {
                     $is_second = TRUE;
                 }
-                // <li class="dropdown"><a href="#"><span>Giải đấu</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 $html_menu_main .= 
                     "<li" . ($is_second ? ' class="dropdown"' : '') . ">" .
-                        "<a" . ($value['lurl'] == current_url() ? '' : ' class="stay"') . " href=\"" . $value['lurl'] . "\">" . $value['lname']
+                        "<a" . ($value['lurl'] != current_url() ? '' : ' class="active"') . " href=\"" . $value['lurl'] . "\">" . $value['lname']
                             . ($is_second ? '<i class="bi bi-chevron-down toggle-dropdown"></i>' : '')
                         . "</a>";
                 if ($is_second) {
-                    $html_menu_main .= '<ul class="dropdown-menu to-right">';
+                    $html_menu_main .= '<ul>';
                     foreach ($data_menu_main_1 as $key1 => $value1) {
-                        $html_menu_main .= '<li><a href="' . $value1['lurl'] . '" class="stay">' . $value1['lname'] . '</a></li>';
+                        $html_menu_main .= '<li><a href="' . $value1['lurl'] . '">' . $value1['lname'] . '</a></li>';
                     }
                     $html_menu_main .= '</ul>';
                 }
