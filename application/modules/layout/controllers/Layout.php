@@ -228,7 +228,7 @@ class Layout extends MX_Controller {
     }
 
     public function _load_category_product($parent = 0, $current_page = '') {
-        if(trim($current_page) == ''){
+        if (trim($current_page) == '') {
             $current_page = current_url();
         }
         $data_category_product = modules::run('shops/cat/gets_data', array('parent' => $parent));
@@ -243,14 +243,14 @@ class Layout extends MX_Controller {
                     $is_second = TRUE;
                 }
                 $html_category_product .= '<li>';
-                    $html_category_product .= '<h3 class="title" data-toggle="collapse" href="#list-'. $id . '"><a href="' . $value['lurl'] . '">' . $value['lname'] . '</a><span class="plus--icon"><i class="fas fa-plus"></i></span></h3>';
-                    if ($is_second) {
-                        $html_category_product .= '<ul id="list-'. $id . '" class="collapse" data-parent=".block-list-categories--content">';
-                            foreach ($data_category_product_1 as $key1 => $value1) {
-                                $html_category_product .= '<li><a href="' . $value1['lurl'] . '">' . $value1['lname'] . '</a></li>';
-                            }
-                        $html_category_product .= '</ul>';
+                $html_category_product .= '<h3 class="title" data-toggle="collapse" href="#list-' . $id . '"><a href="' . $value['lurl'] . '">' . $value['lname'] . '</a><span class="plus--icon"><i class="fas fa-plus"></i></span></h3>';
+                if ($is_second) {
+                    $html_category_product .= '<ul id="list-' . $id . '" class="collapse" data-parent=".block-list-categories--content">';
+                    foreach ($data_category_product_1 as $key1 => $value1) {
+                        $html_category_product .= '<li><a href="' . $value1['lurl'] . '">' . $value1['lname'] . '</a></li>';
                     }
+                    $html_category_product .= '</ul>';
+                }
                 $html_category_product .= "</li>";
             }
         }
@@ -284,7 +284,12 @@ class Layout extends MX_Controller {
                 if (is_array($data_menu_main_1) && !empty($data_menu_main_1)) {
                     $is_second = TRUE;
                 }
-                $html_menu_main .= "<li" . ($is_second ? ' class="dropdown-toggle"' : '') . "><a" . ($value['lurl'] == current_url() ? '' :  ' class="stay"') . " href=\"" . $value['lurl'] . "\">" . $value['lname'] . "</a>";
+                // <li class="dropdown"><a href="#"><span>Giải đấu</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                $html_menu_main .= 
+                    "<li" . ($is_second ? ' class="dropdown"' : '') . ">" .
+                        "<a" . ($value['lurl'] == current_url() ? '' : ' class="stay"') . " href=\"" . $value['lurl'] . "\">" . $value['lname']
+                            . ($is_second ? '<i class="bi bi-chevron-down toggle-dropdown"></i>' : '')
+                        . "</a>";
                 if ($is_second) {
                     $html_menu_main .= '<ul class="dropdown-menu to-right">';
                     foreach ($data_menu_main_1 as $key1 => $value1) {
@@ -419,7 +424,7 @@ class Layout extends MX_Controller {
         $partial = array();
         $partial['data'] = $posts_news;
         $this->_data['posts_news'] = $this->load->view('layout/site/partial/post_news', $partial, true);
-        
+
         $this->_data['main_content'] = 'layout/site/pages/main';
         $this->load->view('site/layout', $this->_data);
     }
@@ -551,11 +556,12 @@ class Layout extends MX_Controller {
         }
         redirect($url);
     }
-function db_backup() {
+    function db_backup() {
         //date_default_timezone_set('Asia/Calcutta');
         // Load the DB utility class
         $this->load->dbutil();
-        $prefs = array('format' => 'zip', // gzip, zip, txt
+        $prefs = array(
+            'format' => 'zip', // gzip, zip, txt
             'filename' => 'backup_' . date('d_m_Y_H_i_s') . '.sql',
             // File name - NEEDED ONLY WITH ZIP FILES
             'add_drop' => TRUE,

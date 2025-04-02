@@ -1,3 +1,40 @@
+<header id="header" class="header d-flex align-items-center fixed-top1">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+
+            <h1 class="sitename">Sports Zone</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <?php echo isset($html_menu_main) ? $html_menu_main : ''; ?>
+
+                <!-- <li><a href="blog-details.html" class="active">Giới thiệu<br></a></li>
+
+                <li class="dropdown"><a href="#"><span>Giải đấu</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="blog-details.html">Bóng đá</a></li>
+
+                        <li><a href="blog-details.html">Chạy bộ</a></li>
+                        <li><a href="blog-details.html">Khác</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="blog-details.html">Đăng ký tổ chức</a></li>
+                <li><a href="blog.html">Tin tức</a></li>
+                <li><a href="contact.html">Liên hệ</a></li> -->
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="btn-getstarted flex-md-shrink-0" href="tel:<?php echo isset($info_hotline_none['content']) ? str_replace('.', '', strip_tags($info_hotline_none['content'])) : ''; ?>">
+            <i class="fa fa-phone"></i> <?php echo isset($info_hotline_none['content']) ? strip_tags($info_hotline_none['content']) : ''; ?>
+        </a>
+
+    </div>
+</header>
 <nav id="navigation" class="white-nav shrink sticky hide-by-scroll modern" data-offset="0">
     <div class="columns container clearfix">
         <div class="logo">

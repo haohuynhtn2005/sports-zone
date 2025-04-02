@@ -122,7 +122,7 @@ class Configs extends Layout {
              * upload favicon
              */
             $input_name_favicon = 'favicon';
-            $this->_upload_image_systems($input_name_favicon, $this->_logo, array('allowed_types' => 'ico'));
+            $this->_upload_image_systems($input_name_favicon, $this->_logo, array('allowed_types' => 'ico|png'));
 
             /*
              * upload logo image

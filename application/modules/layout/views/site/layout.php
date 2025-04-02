@@ -26,28 +26,25 @@
     <meta name="twitter:image:src" content="<?php echo $image; ?>">
     <title><?php echo $title_seo; ?></title>
     <link rel="icon" href="<?php echo base_url(get_module_path('logo') . $favicon); ?>" type="image/x-icon">
-    <link rel="stylesheet" href="<?php echo get_asset('css_path'); ?>plugins.css" />
-    <link rel="stylesheet" href="<?php echo get_asset('css_path'); ?>wdag.css" />
-    <link rel="stylesheet" href="<?php echo get_asset('css_path'); ?>custom.css" />
-    <script type="text/javascript">
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-        ga('create', '<?php echo $analytics_UA_code; ?>', 'auto');
-        ga('send', 'pageview');
-    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/" rel="preconnect">
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+    <!-- Plugins CSS Files -->
+    <link href="<?php echo base_url('assets/plugins/aos/aos.css'); ?>" rel="stylesheet" >
+    <link href="<?php echo base_url('assets/plugins/bootstrap-5.3/css/bootstrap.min.css'); ?>" rel="stylesheet" >
+    <link href="<?php echo base_url('assets/plugins/bootstrap-icons/bootstrap-icons.css'); ?>" rel="stylesheet" >
+    <link href="<?php echo base_url('assets/plugins/glightbox/css/glightbox.min.css'); ?>" rel="stylesheet" >
+    <link href="<?php echo base_url('assets/plugins/swiper/swiper-bundle.min.css'); ?>" rel="stylesheet" >
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="<?php echo get_asset('css_path'); ?>main.css" />
 </head>
 
 <body>
-    <script>
+    <!-- <script>
         window.fbAsyncInit = function() {
             FB.init({
               appId      : '<?php echo $this->config->item('app_id', 'facebook'); ?>',
@@ -63,7 +60,7 @@
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));</script> -->
     <!-- <div class="page-loader bg-white">
         <div class="v-center">
             <div class="loader-square bg-colored"></div>
@@ -72,7 +69,20 @@
     <?php $this->load->view('header'); ?>
     <?php $this->load->view($main_content); ?>
     <?php $this->load->view('footer'); ?>
-    <script type="text/javascript">
+
+    <!-- Plugins JS Files -->
+    <script data-cfasync="false"
+        src="<?php echo base_url('assets/plugins/cloudflare-static/email-decode.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/bootstrap-5.3/js/bootstrap.bundle.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/php-email-form/validate.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/aos/aos.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/isotope-layout/isotope.pkgd.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/swiper/swiper-bundle.min.js'); ?>"></script>
+    <!-- Main JS File -->
+    <script src="<?php echo get_asset('js_path'); ?>main.js"></script>
+
+    <!-- <script type="text/javascript">
         base_url = '<?php echo base_url(); ?>';
     </script>
     <script type="text/javascript" src="<?php echo get_asset('js_path'); ?>jquery.min.js"></script>
@@ -87,6 +97,6 @@
             });
         }
     });
-    </script>
+    </script> -->
 </body>
 </html>
