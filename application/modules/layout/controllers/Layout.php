@@ -382,7 +382,6 @@ class Layout extends MX_Controller {
 
         //slideshow none
         $slideshow_none = modules::run('images/get_by_type', 'slideshow');
-        $this->_data['slideshow_none'] = $slideshow_none;
 
         //about_us
         $about_us_none = modules::run('images/get_by_type', 'about_us', TRUE);
